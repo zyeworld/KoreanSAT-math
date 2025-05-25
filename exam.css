@@ -154,6 +154,7 @@
 
 /* Question */
 .exam article {
+    width: 320px;
     min-height: 50%;
     margin-top: 12px;
     padding-left: 12px;
