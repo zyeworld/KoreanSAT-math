@@ -1,15 +1,18 @@
+// Copy this file into the .vscode folder to use code snippets in HTML files.
 {
 	// HTML Elements
 	"Div.tab": {
+		"scope": "html",
 		"prefix": "tab",
 		"body": [
 			"<div class=\"tab\">",
-			"    $0",
+			"\t$0",
 			"</div>"
 		],
 		"description": "Div.tab"
 	},
 	"Div.center > img": {
+		"scope": "html",
 		"prefix": "centerimg",
 		"body": [
 			"<div class=\"center\"><img src=\"img/$1\" width=\"${2:100%}\"></div>"
@@ -17,50 +20,87 @@
 		"description": "Div.center > img"
 	},
 	"Div.box > ol": {
+		"scope": "html",
 		"prefix": "boxol",
 		"body": [
 			"<div class=\"box\">",
-			"    <ol class=\"upper\">",
-			"        <li>$0</li>",
-			"    </ol>",
+			"\t<ol class=\"upper\">",
+			"\t\t<li>$0</li>",
+			"\t</ol>",
 			"</div>"
 		],
 		"description": "Div.box > ol"
 	},
 	"Div.box-list & text": {
+		"scope": "html",
 		"prefix": "boxlist",
 		"body": [
 			"What is the list of correct statements in the &lt;List&gt;?",
-            "<small>[${1:4} points]</small>",
-            "<div class=\"box-list\">",
-            "    <ol class=\"alpha\">",
-            "        <li>$2</li>",
-            "        <li>$3</li>",
-            "        <li>$4</li>",
-            "    </ol>",
-            "</div>",
-            "<ol class=\"col-3\">",
-            "    <li>a</li>",
-            "    <li>a, b</li>",
-            "    <li>a, c</li>",
-            "    <li>b, c</li>",
-            "    <li>a, b, c</li>",
-            "</ol>"
+			"<small>[${1:4} points]</small>",
+			"<div class=\"box-list\">",
+			"\t<ol class=\"alpha\">",
+			"\t\t<li>$2</li>",
+			"\t\t<li>$3</li>",
+			"\t\t<li>$4</li>",
+			"\t</ol>",
+			"</div>",
+			"<ol class=\"col-3\">",
+			"\t<li>a</li>",
+			"\t<li>a, b</li>",
+			"\t<li>a, c</li>",
+			"\t<li>b, c</li>",
+			"\t<li>a, b, c</li>",
+			"</ol>"
+		],
+		"description": "Div.box-list & text"
+	},
+	"Flex > text & line & text": {
+		"scope": "html",
+		"prefix": "dotline",
+		"body": [
+			"<div",
+			"\tstyle=\"",
+			"\t\tdisplay: flex;",
+			"\t\tjustify-content: space-between;",
+			"\t\talign-items: center;",
+			"\t\"",
+			">",
+			"\t<div>$1</div>",
+			"\t<div",
+			"\t\tstyle=\"",
+			"\t\t\tflex: auto;",
+			"\t\t\tborder-bottom: 1px dotted black;",
+			"\t\t\tmargin: 0 6px;",
+			"\t\t\ttransform: translateY(-50%);",
+			"\t\t\"",
+			"\t></div>",
+			"\t<div>\\((\\mathrm{${2:A}})\\)</div>",
+			"</div>"
 		],
 		"description": "Div.box-list & text"
 	},
 
 	// Miscellaneous symbols
 	"Degree symbol": {
+		"scope": "html",
 		"prefix": "deg",
 		"body": [
 			"°"
 		],
 		"description": "Degree symbol"
 	},
+	"Reference": {
+		"scope": "html",
+		"prefix": "ref",
+		"body": [
+			"※"
+		],
+		"description": "Reference symbol"
+	},
 
 	// MathJax stuff
 	"TeX": {
+		"scope": "html",
 		"prefix": "x",
 		"body": [
 			"\\($1\\)$0"
@@ -70,6 +110,7 @@
 	
 	// Displaystyle stuff
 	"Frac": {
+		"scope": "html",
 		"prefix": "fr",
 		"body": [
 			"\\frac{$1}{$2}$0"
@@ -77,6 +118,7 @@
 		"description": "Frac"
 	},
 	"Displaystyle Frac": {
+		"scope": "html",
 		"prefix": "dfr",
 		"body": [
 			"\\dfrac{$1}{$2}$0"
@@ -84,6 +126,7 @@
 		"description": "Displaystyle Frac"
 	},
 	"Limit": {
+		"scope": "html",
 		"prefix": "lim",
 		"body": [
 			"\\lim_{${1:x}\\;\\!\\to\\;\\!${2:\\infty}}$0"
@@ -91,6 +134,7 @@
 		"description": "Limit"
 	},
 	"Displaystyle Limit": {
+		"scope": "html",
 		"prefix": "dlim",
 		"body": [
 			"\\displaystyle\\lim_{${1:x}\\;\\!\\to\\;\\!${2:\\infty}}$0"
@@ -98,6 +142,7 @@
 		"description": "Displaystyle Limit"
 	},
 	"Integral": {
+		"scope": "html",
 		"prefix": "int",
 		"body": [
 			"\\int_{${1:0}}^{${2:1}}$0"
@@ -105,6 +150,7 @@
 		"description": "Integral"
 	},
 	"Displaystyle Integral": {
+		"scope": "html",
 		"prefix": "dint",
 		"body": [
 			"\\displaystyle\\int_{${1:0}}^{${2:1}}$0"
@@ -112,6 +158,7 @@
 		"description": "Displaystyle Integral"
 	},
 	"Sum": {
+		"scope": "html",
 		"prefix": "sum",
 		"body": [
 			"\\sum_{${1:n}\\;\\!=\\;\\!${2:1}}^{${3:\\infty}}$0"
@@ -119,6 +166,7 @@
 		"description": "Sum"
 	},
 	"Displaystyle Sum": {
+		"scope": "html",
 		"prefix": "dsum",
 		"body": [
 			"\\displaystyle\\sum_{${1:n}\\;\\!=\\;\\!${2:1}}^{${3:\\infty}}$0"
@@ -128,6 +176,7 @@
 
 	// Mathrm stuff
 	"Mathrm": {
+		"scope": "html",
 		"prefix": "rm",
 		"body": [
 			"\\mathrm{${1:A}}$0"
@@ -135,6 +184,7 @@
 		"description": "Mathrm"
 	},
 	"TeX Mathrm": {
+		"scope": "html",
 		"prefix": "xrm",
 		"body": [
 			"\\(\\mathrm{${1:A}}\\)$0"
@@ -142,6 +192,7 @@
 		"description": "TeX Mathrm"
 	},
 	"Overline": {
+		"scope": "html",
 		"prefix": "ovl",
 		"body": [
 			"\\overline{\\mathrm{${1:AB}}}$0"
@@ -149,6 +200,7 @@
 		"description": "Overline"
 	},
 	"Overrightarrow": {
+		"scope": "html",
 		"prefix": "ovr",
 		"body": [
 			"\\overrightarrow{\\mathrm{${1:AB}}}$0"
@@ -158,16 +210,18 @@
 
 	// Begin-End stuff
 	"Cases": {
+		"scope": "html",
 		"prefix": "cases",
 		"body": [
 			"\\begin{cases}",
-			"    ${1:x} &\\; (${2:x &lt; 0}) \\\\\\",
-			"    ${3:x} &\\; (${4:x \\geq 0})",
+			"\t${1:x} &\\; (${2:x &lt; 0}) \\\\\\",
+			"\t${3:x} &\\; (${4:x \\geq 0})",
 			"\\end{cases}$0"
 		],
 		"description": "Cases"
 	},
 	"Pmatrix": {
+		"scope": "html",
 		"prefix": "pmat",
 		"body": [
 			"\\begin{pmatrix} ${1:0&0} \\\\\\ ${2:0&0} \\end{pmatrix}$0"
@@ -177,6 +231,7 @@
 
 	// Parentheses stuff
 	"Parentheses ()": {
+		"scope": "html",
 		"prefix": "par",
 		"body": [
 			"\\left(\\!$1\\!\\right)$0"
@@ -185,6 +240,7 @@
 	},
 
 	"Fbox": {
+		"scope": "html",
 		"prefix": "fbox",
 		"body": [
 			"\\fbox{\\(\\;(${1:\\alpha})\\;\\)}$0"
