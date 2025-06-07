@@ -1,7 +1,6 @@
 html {
     font-family:'PT Serif', Times, serif;
     background-color: var(--color-bg);
-    overflow: hidden;
 }
 .korean {
     font-family: 'Noto Sans KR', sans-serif;
@@ -28,12 +27,22 @@ html {
     25% { background-color: var(--color-bg); }
     33%, 100% { height: 6.25rem; top: 5rem; background-color: transparent; }
 }
-#title:target { animation: header-shrink 7s ease-in-out 0s forwards; }
+#title:target {
+    animation: header-shrink 7s ease-in-out 0s forwards;
+    -moz-animation: header-shrink 7s ease-in-out 0s forwards;
+    -webkit-animation: header-shrink 7s ease-in-out 0s forwards;
+    -o-animation: header-shrink 7s ease-in-out 0s forwards;
+}
 @keyframes disappear {
     0%, 50% { opacity: 1; }
     100% { opacity: 0; }
 }
-#title:target .title-dots > div { animation: disappear 1s linear 0s forwards; }
+#title:target .title-dots > div {
+    animation: disappear 1s linear 0s forwards;
+    -moz-animation: disappear 1s linear 0s forwards;
+    -webkit-animation: disappear 1s linear 0s forwards;
+    -o-animation: disappear 1s linear 0s forwards;
+}
 @keyframes title-move {
     0%, 15% {
         width: 35%;
@@ -46,12 +55,27 @@ html {
         max-width: 60px;
     }
 }
-#title:target .title-container { animation: title-move 7s ease-in-out 0s forwards; }
+#title:target .title-container {
+    animation: title-move 7s ease-in-out 0s forwards;
+    -moz-animation: title-move 7s ease-in-out 0s forwards;
+    -webkit-animation: title-move 7s ease-in-out 0s forwards;
+    -o-animation: title-move 7s ease-in-out 0s forwards;
+}
 @keyframes thicken-width { 0%, 5% {width: 4%;} 20%, 100% {width: 8%;} }
-#title:target .s-inf { animation: thicken-width 7s ease-in-out 0s forwards; }
+#title:target .s-inf {
+    animation: thicken-width 7s ease-in-out 0s forwards;
+    -moz-animation: thicken-width 7s ease-in-out 0s forwards;
+    -webkit-animation: thicken-width 7s ease-in-out 0s forwards;
+    -o-animation: thicken-width 7s ease-in-out 0s forwards;
+}
 @keyframes thicken-height { 0%, 5% {height: 4%;} 20%, 100% {height: 8%;} }
 #title:target .s-0,
-#title:target .s-1 { animation: thicken-height 7s ease-in-out 0s forwards; }
+#title:target .s-1 {
+    animation: thicken-height 7s ease-in-out 0s forwards;
+    -moz-animation: thicken-height 7s ease-in-out 0s forwards;
+    -webkit-animation: thicken-height 7s ease-in-out 0s forwards;
+    -o-animation: thicken-height 7s ease-in-out 0s forwards;
+}
 
 /* Main */
 main {
@@ -60,6 +84,8 @@ main {
     color: var(--color-beige);
     font-size: 1.2rem;
     text-align: center;
+
+    overflow: hidden;
 
     display: flex;
     justify-content: center;
@@ -92,6 +118,7 @@ main > div > small {
     font-weight: bold;
     font-style: italic;
     text-align: center;
+    white-space: pre;
     color: var(--color-bg);
 }
 
@@ -124,7 +151,7 @@ a { text-decoration: none; }
     display: none;
     margin: 1.5rem 3rem 0;
     border: 1px solid var(--color-beige);
-    border-radius: 50rem;
+    border-radius: 25px;
     padding: 0;
     box-shadow: var(--color-black) 4px 4px 3px;
 
@@ -146,7 +173,7 @@ a { text-decoration: none; }
     left: 50%;
     background-color: transparent;
     text-align: left;
-    transform: translate(-50%, -11rem) scale(0.6) skew(357deg, 3deg);
+    transform: translate(-50%, -90px) scale(0.75) skew(2deg, 358deg);
 }
 .exam-page {
     position: absolute;
@@ -156,15 +183,15 @@ a { text-decoration: none; }
     background-color: var(--color-beige);
 }
 .exam-page:nth-of-type(1) {
-    transform: rotate(-8deg) translate(-0.5%, 5%);
+    transform: rotate(-2deg) translate(-0.3%, 2%);
     opacity: 0.6;
 }
 .exam-page:nth-of-type(2) {
-    transform: rotate(-5deg) translate(-0.5%, 4%);
+    transform: rotate(5deg) translate(-0.2%, 0%);
     opacity: 0.7;
 }
 .exam-page:nth-of-type(3) {
-    transform: rotate(-2deg) translate(-0.3%, 3%);
+    transform: rotate(2deg) translate(0.3%, -0.5%);
     opacity: 0.8;
 }
 .exam section {
@@ -185,12 +212,6 @@ main::after {
 }
 
 /* Responsive */
-@media screen and (max-height: 600px) {
-    main::after { height: 0; }
-    main, #title { top: 0; }
-    main > div { border-top: none; }
-}
-
 @media screen and (max-width: 720px) {
     /* main::after { height: 0; } */
     main, #title { top: 0; }
@@ -199,9 +220,16 @@ main::after {
 
     .small-screen-link { display: block; }
     .exam-container a { display: none; }
-    .exam-container2 { transform: translate(-50%, -15rem) scale(0.45) skew(357deg, 3deg); }
+    .exam-container2 { transform: translate(-50%, 2rem) scale(0.9) skew(2deg, 358deg); }
+}
+
+@media screen and (max-height: 600px) {
+    main::after { height: 0; }
+    main, #title { top: 0; }
+    main > div { border-top: none; }
 }
 
 @media screen and (max-width: 480px) {
-    .exam-container2 { transform: translate(-50%, -23rem) scale(0.3) skew(357deg, 3deg); }
+    .exam-container2 { transform: translate(-50%, -5rem) scale(0.75) skew(2deg, 358deg); }
+    .small-screen-link { margin: 1.5rem 1.5rem 0; }
 }
