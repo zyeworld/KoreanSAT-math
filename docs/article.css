@@ -30,11 +30,10 @@ article {
 /* Contents */
 p, main > div div {
     margin-bottom: 0.5rem;
-    text-indent: 0.5em;
 }
 h1, h2 { color: var(--color-bg); }
 h1 {
-    margin: 1em;
+    margin: 0.5em 0;
     text-align: center;
     font-size: 3rem;
 }
@@ -42,6 +41,7 @@ hr {
     margin: 0;
     border: 1px solid var(--color-bg);
 }
+abbr { font-weight: bold; }
 .u { text-decoration: underline; }
 main a {
     color: var(--color-bg);
@@ -82,10 +82,16 @@ main a:hover {
 @media screen and (max-height: 600px) {
     main { margin-top: 0; margin-bottom: 0; }
 }
+
 @media screen and (max-width: 720px) {
     main { margin-top: 0; margin-bottom: 0; }
     main > div { max-width: 100%; }
+    article {
+        padding: 0 1.5rem 3rem;
+    }
     .home {
+        top: 0.5rem;
+        left: 0.5rem;
         color: var(--color-beige);
         border: 3px solid var(--color-beige);
         background-color: var(--color-bg);

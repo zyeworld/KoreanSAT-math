@@ -2,9 +2,6 @@ html {
     font-family:'PT Serif', Times, serif;
     background-color: var(--color-bg);
 }
-.korean {
-    font-family: 'Noto Sans KR', sans-serif;
-}
 
 /* Title */
 #title {
@@ -20,61 +17,6 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-/* Title Animation */
-@keyframes header-shrink {
-    0%, 15% { height: 100%; top: 0; background-color: var(--color-bg); }
-    25% { background-color: var(--color-bg); }
-    33%, 100% { height: 6.25rem; top: 5rem; background-color: transparent; }
-}
-#title:target {
-    animation: header-shrink 7s ease-in-out 0s forwards;
-    -moz-animation: header-shrink 7s ease-in-out 0s forwards;
-    -webkit-animation: header-shrink 7s ease-in-out 0s forwards;
-    -o-animation: header-shrink 7s ease-in-out 0s forwards;
-}
-@keyframes disappear {
-    0%, 50% { opacity: 1; }
-    100% { opacity: 0; }
-}
-#title:target .title-dots > div {
-    animation: disappear 1s linear 0s forwards;
-    -moz-animation: disappear 1s linear 0s forwards;
-    -webkit-animation: disappear 1s linear 0s forwards;
-    -o-animation: disappear 1s linear 0s forwards;
-}
-@keyframes title-move {
-    0%, 15% {
-        width: 35%;
-        min-width: 100px;
-        max-width: 200px;
-    }
-    30%, 100% {
-        width: 60px;
-        min-width: 60px;
-        max-width: 60px;
-    }
-}
-#title:target .title-container {
-    animation: title-move 7s ease-in-out 0s forwards;
-    -moz-animation: title-move 7s ease-in-out 0s forwards;
-    -webkit-animation: title-move 7s ease-in-out 0s forwards;
-    -o-animation: title-move 7s ease-in-out 0s forwards;
-}
-@keyframes thicken-width { 0%, 5% {width: 4%;} 20%, 100% {width: 8%;} }
-#title:target .s-inf {
-    animation: thicken-width 7s ease-in-out 0s forwards;
-    -moz-animation: thicken-width 7s ease-in-out 0s forwards;
-    -webkit-animation: thicken-width 7s ease-in-out 0s forwards;
-    -o-animation: thicken-width 7s ease-in-out 0s forwards;
-}
-@keyframes thicken-height { 0%, 5% {height: 4%;} 20%, 100% {height: 8%;} }
-#title:target .s-0,
-#title:target .s-1 {
-    animation: thicken-height 7s ease-in-out 0s forwards;
-    -moz-animation: thicken-height 7s ease-in-out 0s forwards;
-    -webkit-animation: thicken-height 7s ease-in-out 0s forwards;
-    -o-animation: thicken-height 7s ease-in-out 0s forwards;
 }
 
 /* Main */
@@ -132,7 +74,7 @@ a { text-decoration: none; }
     padding: 0.25rem;
 
     font-size: 3rem;
-    font-family:'PT Serif', Times, serif;
+    font-family: 'PT Serif', Times, serif;
     font-weight: bold;
     text-align: center;
     color: var(--color-beige);
@@ -212,7 +154,16 @@ main::after {
 }
 
 /* Responsive */
-@media screen and (max-width: 720px) {
+@media only screen and (max-height: 600px) {
+    main::after {
+        height: 15%;
+        background: linear-gradient(180deg, transparent 0%, var(--color-bg) 90%);
+    }
+    main, #title { top: 0; }
+    main > div { border-top: none; }
+}
+
+@media only screen and (max-width: 720px) {
     /* main::after { height: 0; } */
     main, #title { top: 0; }
     main > div { max-width: 100%; border: none; }
@@ -223,13 +174,7 @@ main::after {
     .exam-container2 { transform: translate(-50%, 2rem) scale(0.9) skew(2deg, 358deg); }
 }
 
-@media screen and (max-height: 600px) {
-    main::after { height: 0; }
-    main, #title { top: 0; }
-    main > div { border-top: none; }
-}
-
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 480px) {
     .exam-container2 { transform: translate(-50%, -5rem) scale(0.75) skew(2deg, 358deg); }
     .small-screen-link { margin: 1.5rem 1.5rem 0; }
 }

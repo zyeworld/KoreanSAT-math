@@ -1,14 +1,5 @@
 /* Title animations */
 
-.title-button {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 80px;
-    height: 80px;
-    transform: translate(-50%, -50%);
-}
-
 .title-container {
     width: 60px;
     min-width: 60px;
@@ -72,13 +63,99 @@
 
 /* Animations */
 @keyframes title-s { 0%, 15% { left: 0; } 30%, 100% { left: -150%; } }
-.title-s { animation: title-s 7s ease-in-out 0s infinite alternate; }
+.title-s {
+    animation: title-s 7s ease-in-out 0s infinite alternate;
+    -moz-animation: title-s 7s ease-in-out 0s infinite alternate;
+    -webkit-animation: title-s 7s ease-in-out 0s infinite alternate;
+    -o-animation: title-s 7s ease-in-out 0s infinite alternate;
+}
 
 @keyframes title-e { 0%, 15% { left: 0; } 30%, 100% {left: 10%; } }
-.title-e { animation: title-e 7s ease-in-out 0s infinite alternate; }
+.title-e {
+    animation: title-e 7s ease-in-out 0s infinite alternate;
+    -moz-animation: title-e 7s ease-in-out 0s infinite alternate;
+    -webkit-animation: title-e 7s ease-in-out 0s infinite alternate;
+    -o-animation: title-e 7s ease-in-out 0s infinite alternate;
+}
 
 @keyframes appear { 0%, 25% { opacity: 0; } 30%, 100% { opacity: 1; } }
-.title-other { animation: appear 7s ease-in-out 0s infinite alternate; }
+.title-other {
+    animation: appear 7s ease-in-out 0s infinite alternate;
+    -moz-animation: appear 7s ease-in-out 0s infinite alternate;
+    -webkit-animation: appear 7s ease-in-out 0s infinite alternate;
+    -o-animation: appear 7s ease-in-out 0s infinite alternate;
+}
 
 @keyframes title-button { 0%, 15% { width: 80px; } 30%, 100% { width: 260px; } }
-.title-button { animation: title-button 7s ease-in-out 0s infinite alternate; }
+.title-button {
+    animation: title-button 7s ease-in-out 0s infinite alternate;
+    -moz-animation: title-button 7s ease-in-out 0s infinite alternate;
+    -webkit-animation: title-button 7s ease-in-out 0s infinite alternate;
+    -o-animation: title-button 7s ease-in-out 0s infinite alternate;
+}
+
+
+/* Title animations (with anchor #title) */
+@keyframes header-shrink {
+    0%, 15% { height: 100%; top: 0; background-color: var(--color-bg); }
+    25% { background-color: var(--color-bg); }
+    33%, 100% { height: 6.25rem; top: 5rem; background-color: transparent; }
+}
+#title:target {
+    animation: header-shrink 7s ease-in-out 0s forwards;
+    -moz-animation: header-shrink 7s ease-in-out 0s forwards;
+    -webkit-animation: header-shrink 7s ease-in-out 0s forwards;
+    -o-animation: header-shrink 7s ease-in-out 0s forwards;
+}
+@keyframes disappear {
+    0%, 50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+#title:target .title-dots > div {
+    animation: disappear 1s linear 0s forwards;
+    -moz-animation: disappear 1s linear 0s forwards;
+    -webkit-animation: disappear 1s linear 0s forwards;
+    -o-animation: disappear 1s linear 0s forwards;
+}
+@keyframes title-move {
+    0%, 15% {
+        width: 35%;
+        min-width: 100px;
+        max-width: 200px;
+    }
+    30%, 100% {
+        width: 60px;
+        min-width: 60px;
+        max-width: 60px;
+    }
+}
+#title:target .title-container {
+    animation: title-move 7s ease-in-out 0s forwards;
+    -moz-animation: title-move 7s ease-in-out 0s forwards;
+    -webkit-animation: title-move 7s ease-in-out 0s forwards;
+    -o-animation: title-move 7s ease-in-out 0s forwards;
+}
+@keyframes thicken-width { 0%, 5% {width: 4%;} 20%, 100% {width: 8%;} }
+#title:target .s-inf {
+    animation: thicken-width 7s ease-in-out 0s forwards;
+    -moz-animation: thicken-width 7s ease-in-out 0s forwards;
+    -webkit-animation: thicken-width 7s ease-in-out 0s forwards;
+    -o-animation: thicken-width 7s ease-in-out 0s forwards;
+}
+@keyframes thicken-height { 0%, 5% {height: 4%;} 20%, 100% {height: 8%;} }
+#title:target .s-0,
+#title:target .s-1 {
+    animation: thicken-height 7s ease-in-out 0s forwards;
+    -moz-animation: thicken-height 7s ease-in-out 0s forwards;
+    -webkit-animation: thicken-height 7s ease-in-out 0s forwards;
+    -o-animation: thicken-height 7s ease-in-out 0s forwards;
+}
+
+/* Responsive */
+@media only screen and (max-height: 600px), only screen and (max-width: 720px) {
+    @keyframes header-shrink {
+        0%, 15% { height: 100%; top: 0; background-color: var(--color-bg); }
+        25% { background-color: var(--color-bg); }
+        33%, 100% { height: 6.25rem; top: 0; background-color: transparent; }
+    }
+}
